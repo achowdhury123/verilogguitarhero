@@ -1,0 +1,39 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company:
+// Engineer:
+//
+// Create Date:    18:49:11 04/27/2015
+// Design Name:
+// Module Name:    trigmux
+// Project Name:
+// Target Devices:
+// Tool versions:
+// Description: 
+//
+// Dependencies:
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments:
+//
+//////////////////////////////////////////////////////////////////////////////////
+module mux_4_1(trigger,debouncer,clkdivider,out
+    );
+input trigger,debouncer,clkdivider;
+output reg out;
+
+initial begin
+out <=0;
+end
+
+always @(trigger)
+if(trigger)
+    begin
+        out<=clkdivider;
+    end
+else
+    begin
+        out<=debouncer;
+    end
+endmodule
